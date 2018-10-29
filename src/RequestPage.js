@@ -3,14 +3,12 @@ import * as BooksAPI from './BooksAPI'
 import Book from './Book';
 import {Link} from 'react-router-dom';
 
-
 class RequestPage extends Component {
   state = {
     query: '',
     searchedBooks: []
   }
 
-///udates book on user input///
   updateQuery = (query) => {
     this.setState({query: query})
     this.updateSearchedBooks(query);
@@ -40,10 +38,7 @@ class RequestPage extends Component {
 
         <div className="search-books-input-wrapper">
 
-          <input type="text"
-                placeholder="Search by title or author"
-                value={this.state.query}
-                onChange={(event) => {
+          <input type="text" placeholder="Search by title or author" value={this.state.query} onChange={(event) => {
               this.updateQuery(event.target.value)
             }}/>
         </div>
@@ -57,12 +52,14 @@ class RequestPage extends Component {
               this.props.books.map(book => (
                 book.id === searchedBook.id
                 ? shelf = book.shelf
-                : ''))
+                : ''
+              ));
               return (<li key = {searchedBook.id}>
-                <Book book={searchedBook}
-                      swapShelf={this.props.swapShelf}
-                      currentShelf={shelf}
-                      />
+                <Book
+                book={searchedBook}
+                swapShelf={this.props.swapShelf}
+                currentShelf={shelf}
+                />
               </li>);
             })
           }

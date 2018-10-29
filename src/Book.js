@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class Book extends Component {
   render() {
+
     let displayThumbnail = this.props.book.imageLinks
       ? this.props.book.imageLinks.thumbnail
       : '';
@@ -13,6 +14,7 @@ class Book extends Component {
             height: 193,
             backgroundImage: `url("${displayThumbnail}")`
           }}></div>
+
         <div className="book-shelf-changer">
           <select onChange = {(event) => this.props.swapShelf(this.props.book,
                event.target.value)} value={this.props.book.shelf}>

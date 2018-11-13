@@ -4,6 +4,7 @@ class Book extends Component {
   render() {
 
     let displayThumbnail = this.props.book.imageLinks
+    /*checks to get book details based of user input*/
       ? this.props.book.imageLinks.thumbnail
       : '';
 
@@ -13,7 +14,8 @@ class Book extends Component {
             width: 128,
             height: 193,
             backgroundImage: `url("${displayThumbnail}")`
-          }}></div>
+          }}>
+        </div>
 
         <div className="book-shelf-changer">
           <select onChange = {(event) => this.props.swapShelf(

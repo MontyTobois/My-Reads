@@ -5,21 +5,25 @@ import {Link} from 'react-router-dom';
 
 class RequestPage extends Component {
   state = {
+    /*control the input*/
     query: '',
     searchedBooks: []
   }
 
   updateQuery = (query) => {
+    /*updates the search based on the user input */
     this.setState({query: query})
     this.updateSearchedBooks(query);
   }
 
   updateSearchedBooks = (query) => {
     if (query) {
+      /*will show nothing if input does't match */
       BooksAPI.search(query).then((searchedBooks) => {
         if (searchedBooks.error) {
           this.setState({searchedBooks: []});
         } else {
+          /*looks in the data base for books based on the input that do match */
           this.setState({searchedBooks: searchedBooks});
         }
       })
@@ -33,7 +37,7 @@ class RequestPage extends Component {
     return (<div className="search-books">
       <div className="search-books-bar">
 
-        <Link to="/" className="close-search">
+        <Link to ="/" className="close-search">
           Close</Link>
 
         <div className="search-books-input-wrapper">

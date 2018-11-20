@@ -24,9 +24,9 @@ My object was to take the static template and add React.js giving the app intera
 
 * Clone this repo to your terminal or download the zip
 
-* install all project dependencies with `npm install`
+* Install all project dependencies with `npm install`
 
-* start the development server with `npm start`
+* Start the development server with `npm start`
 
 
 ## Language

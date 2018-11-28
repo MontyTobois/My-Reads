@@ -9,6 +9,7 @@
 * [Important](#Important)
 * [Credits](#Credits)
 
+[DEMO](https://my-readingshelf.herokuapp.com/)
 
 ## Overview
 In this project, I created a bookshelf app that allow the user to find books and categorize them as have read, are currently reading, or want to read. The project recommended using React to build the application and provides an API sever and client library.
